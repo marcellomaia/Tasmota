@@ -279,7 +279,7 @@
 #define LIGHT_CLOCK_DIRECTION  false             // [SetOption16] Switch WS2812 clock between clockwise or counter-clockwise
 #define LIGHT_COLOR_RADIX      false             // [SetOption17] Switch between decimal or hexadecimal color output (false = hexadecimal, true = decimal)
 #define LIGHT_PAIRS_CO2        false             // [SetOption18] Enable Pair light signal with CO2 sensor
-#define LIGHT_POWER_CONTROL    false             // [SetOption20] Enable power control in relation to Dimmer/Color/Ct changes
+#define LIGHT_POWER_CONTROL    true              // [SetOption20] Enable power control in relation to Dimmer/Color/Ct changes
 #define LIGHT_CHANNEL_MODE     false             // [SetOption68] Enable multi-channels PWM instead of Color PWM
 #define LIGHT_SLIDER_POWER     false             // [SetOption77] Do not power off if slider moved to far left
 #define LIGHT_ALEXA_CT_RANGE   false             // [SetOption82] Reduced CT range for Alexa

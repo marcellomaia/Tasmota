@@ -765,7 +765,7 @@ enum SupportedModules {
   SONOFF_S31, ZENGGE_ZF_WF017, SONOFF_POW_R2, SONOFF_IFAN02, BLITZWOLF_BWSHP, SHELLY1, SHELLY2, PHILIPS, NEO_COOLCAM, ESP_SWITCH,
   OBI, TECKIN, APLIC_WDP303075, TUYA_DIMMER, GOSUND, ARMTRONIX_DIMMERS, SK03_TUYA, PS_16_DZ, TECKIN_US, MANZOKU_EU_4,
   OBI2, YTF_IR_BRIDGE, DIGOO, KA10, ZX2820, MI_DESK_LAMP, SP10, WAGA, SYF05, SONOFF_L1,
-  SONOFF_IFAN03, EXS_DIMMER, PWM_DIMMER, SONOFF_D1,
+  SONOFF_IFAN03, EXS_DIMMER, PWM_DIMMER, SONOFF_D1, DM02A_MODULE,
   MAXMODULE};
 
 #define USER_MODULE        255
@@ -778,7 +778,7 @@ const char kModuleNames[] PROGMEM =
   "Sonoff S31|Zengge WF017|Sonoff Pow R2|Sonoff iFan02|BlitzWolf SHP|Shelly 1|Shelly 2|Xiaomi Philips|Neo Coolcam|ESP Switch|"
   "OBI Socket|Teckin|AplicWDP303075|Tuya MCU|Gosund SP1 v23|ARMTR Dimmer|SK03 Outdoor|PS-16-DZ|Teckin US|Manzoku strip|"
   "OBI Socket 2|YTF IR Bridge|Digoo DG-SP202|KA10|Luminea ZX2820|Mi Desk Lamp|SP10|WAGA CHCZ02MB|SYF05|Sonoff L1|"
-  "Sonoff iFan03|EXS Dimmer|PWM Dimmer|Sonoff D1"
+  "Sonoff iFan03|EXS Dimmer|PWM Dimmer|Sonoff D1|DM02A (Maia)"
   ;
 
 const uint8_t kModuleNiceList[] PROGMEM = {
@@ -799,6 +799,9 @@ const uint8_t kModuleNiceList[] PROGMEM = {
   SONOFF_T13,
 #ifdef USE_SONOFF_D1
   SONOFF_D1,           // Sonoff D1
+#endif
+#ifdef USE_DM02A_MODULE
+  DM02A_MODULE,
 #endif
   SONOFF_LED,          // Sonoff Light Devices
   SONOFF_BN,
@@ -2244,6 +2247,23 @@ const mytmplt kModules[MAXMODULE] PROGMEM = {
     0,                // GPIO12
     GPIO_LED1_INV,    // GPIO13 WiFi Blue Led - Link and Power status
     0, 0, 0, 0
+  },
+  {                   // DM02A_MODULE - Maia Dual Dimmer
+    GPIO_USER,        // GPIO00 Pad
+    GPIO_USER,        // GPIO01 
+    0,                // GPIO02 CH
+    GPIO_USER,        // GPIO03 
+    0,                // GPIO04 EN
+    GPIO_USER,        // GPIO05 DEBUG_TX
+                      // GPIO06 (SD_CLK   Flash)
+                      // GPIO07 (SD_DATA0 Flash QIO/DIO/DOUT)
+                      // GPIO08 (SD_DATA1 Flash QIO/DIO/DOUT)
+    0,                // GPIO09
+    0,                // GPIO10
+                      // GPIO11 (SD_CMD   Flash)
+    0,                // GPIO12 SIG
+    GPIO_LED1_INV,    // GPIO13 WiFi Blue Led - Link and Power status
+    0, 0, 0, ADC0_USER
   }
 };
 

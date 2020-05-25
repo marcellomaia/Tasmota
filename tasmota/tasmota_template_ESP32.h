@@ -32,6 +32,7 @@
 #undef USE_SONOFF_IFAN
 #undef USE_SONOFF_L1
 #undef USE_SONOFF_D1
+#undef USE_DM02A_MODULE
 #undef USE_RF_FLASH
 
 // Not ported (yet)

@@ -1261,6 +1261,10 @@ void SettingsDelta(void)
         Settings.dimmer_hw_min = 10;
         Settings.dimmer_hw_max = Settings.param[P_ex_DIMMER_MAX];
       }
+      else if (DM02A_MODULE == Settings.module) {
+        Settings.dimmer_hw_min = 0;
+        Settings.dimmer_hw_max = 70;
+      }
     }
     if (Settings.version < 0x06060014) {
       // Clear unused parameters for future use
